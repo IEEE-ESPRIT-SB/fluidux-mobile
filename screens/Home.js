@@ -4,31 +4,38 @@ import {SafeAreaView} from "react-native-safe-area-context";
 import {Feather} from "@expo/vector-icons";
 import Chart from "../components/Chart";
 
-const Home = ({  }) => {
+const Home = ({navigation}) => {
     return (
         <SafeAreaView style={styles.container}>
-           <View style={styles.header}>
-               <Text style={styles.headerText}>Home</Text>
-           </View>
+            <View style={styles.header}>
+                <Feather
+                    name="menu" size={32} color={colors.white}
+                    style={{position: "absolute", top: 10, left: 10}}
+                    onPress={() => navigation.openDrawer()}
+                />
+                <Text style={styles.headerText}>Home</Text>
+            </View>
             <View style={styles.content}>
                 <View style={styles.cards}>
                     <View style={styles.card}>
                         <Text style={styles.cardTitle}>Energy Created</Text>
-                        <Text style={styles.cardSubtitle}>6% <Feather name="arrow-down-right" size={14} color={colors.white} /> from yesterday</Text>
+                        <Text style={styles.cardSubtitle}>6% <Feather name="arrow-down-right" size={14}
+                                                                      color={colors.white}/> from yesterday</Text>
                         <View style={styles.circleCard}>
                             <Text style={styles.circleCardText}>20 %</Text>
                         </View>
                     </View>
                     <View style={styles.card}>
                         <Text style={styles.cardTitle}>Energy Created</Text>
-                        <Text style={styles.cardSubtitle}>6% <Feather name="arrow-up-right" size={14} color={colors.white} /> from yesterday</Text>
+                        <Text style={styles.cardSubtitle}>6% <Feather name="arrow-up-right" size={14}
+                                                                      color={colors.white}/> from yesterday</Text>
                         <View style={styles.circleCard}>
                             <Text style={styles.circleCardText}>20 %</Text>
                         </View>
                     </View>
                 </View>
 
-                <Chart />
+                <Chart/>
 
             </View>
 

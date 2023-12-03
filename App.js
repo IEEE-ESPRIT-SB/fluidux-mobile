@@ -40,17 +40,17 @@ export default function App() {
         <SafeAreaProvider>
             <NavigationContainer>
                 <Stack.Navigator
-                    //initial Route to Load
-                    initialRouteName="AuthStack"
+                    // Initial route to load
+                    initialRouteName="GetStarted"
                     screenOptions={{
-                        //header Visibility
+                        // Header visibility
                         headerShown: false,
                     }}
                 >
-                    {/*Auth Stack Contains Get Started - Login - Register Pages*/}
-                    <Stack.Screen name="AuthStack" component={AuthStack}/>
-                    {/*Main Stack Contains Other Pages*/}
-                    <Stack.Screen name="MainStack" component={MainStack}/>
+                    {/* Auth Stack Contains Get Started - Login - Register Pages */}
+                    <Stack.Screen name="AuthStack" component={AuthStack} />
+                    {/* Main Stack Contains Other Pages */}
+                    <Stack.Screen name="MainStack" component={MainStack} />
                 </Stack.Navigator>
             </NavigationContainer>
         </SafeAreaProvider>
