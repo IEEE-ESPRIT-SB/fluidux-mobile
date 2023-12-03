@@ -1,24 +1,30 @@
 import {Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import {SafeAreaView} from "react-native-safe-area-context";
-import SIGHT from "../assets/images/sight.png";
-import SB from "../assets/images/sb.png";
-import Logo from "../assets/Logo.png";
+import SIGHT from "../assets/images/sight_w.png";
+import SB from "../assets/images/sb_w.png";
+import Logo from "../assets/Logo_W.png";
+import colors from "../assets/colors.json";
+import {StatusBar} from "expo-status-bar";
 
 const GetStarted = ({navigation}) => {
     return (
         <SafeAreaView style={styles.container}>
+            <StatusBar style="light" />
             <View style={styles.header}>
                 <Image source={SIGHT} style={styles.headerLogo}/>
                 <Image source={SB} style={styles.headerLogo}/>
             </View>
             <View style={styles.content}>
                 <Image source={Logo} style={styles.logo}/>
-                <View style={{flexDirection: "column", gap: 15}}>
+                <View style={styles.descContainer}>
                     <View>
-                        <Text style={{fontSize: 24, fontWeight: "300", marginTop: 20}}>Welcome to </Text>
-                        <Text style={{fontSize: 24, fontWeight: "bold"}}>FLUIDUX Mobile APP</Text>
+                        <Text style={styles.subtitle}>Welcome to </Text>
+                        <Text style={styles.title}>FLUIDUX Mobile APP</Text>
                     </View>
-                    <Text style={{fontSize: 16, fontWeight: "300", }}>Lorem ipsum dolor sit amet consectetur. Pretium nulla convallis habitasse ornare magna. Neque massa auctor urna dis dolor accumsan elementum leo vel. Et libero nec vitae egestas dolor imperdiet duis condimentum. Porttitor et vitae nibh blandit volutpat vel tempor ipsum massa. </Text>
+                    <Text style={styles.description}>Lorem ipsum dolor sit amet consectetur. Pretium nulla convallis
+                        habitasse ornare magna. Neque massa auctor urna dis dolor accumsan elementum leo vel. Et libero
+                        nec vitae egestas dolor imperdiet duis condimentum. Porttitor et vitae nibh blandit volutpat vel
+                        tempor ipsum massa. </Text>
                 </View>
                 <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Auth")}>
                     <Text style={styles.buttonText}>Get Started</Text>
@@ -31,16 +37,15 @@ const GetStarted = ({navigation}) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#fff",
+        backgroundColor: colors.primary,
         paddingHorizontal: 20,
         alignItems: "center",
+        paddingVertical: 10,
     },
     header: {
         flexDirection: "row",
         justifyContent: "space-between",
         width: "100%",
-        marginTop: 20,
-
     },
     headerLogo: {
         height: 52,
@@ -53,6 +58,33 @@ const styles = StyleSheet.create({
         resizeMode: "contain",
         alignSelf: "center",
     },
+    descContainer: {
+        flexDirection: "column",
+        gap: 15,
+        paddingHorizontal: 30,
+        paddingVertical: 20,
+        borderRadius: 10,
+        backgroundColor: colors["grey-200"],
+        borderWidth: 1,
+        borderColor: colors.white,
+    },
+    title: {
+        fontSize: 20,
+        fontFamily: "Inter-700",
+        color: colors.white
+    },
+    subtitle: {
+        fontSize: 16,
+        fontFamily: "Inter-300",
+        color: colors.white
+
+    },
+    description: {
+        fontSize: 14,
+        fontFamily: "Inter-300",
+        textAlign: "justify",
+        color: colors.white
+    },
     content: {
         flex: 1,
         width: "100%",
@@ -60,17 +92,17 @@ const styles = StyleSheet.create({
         marginVertical: 25
     },
     button: {
-        backgroundColor: "#115385",
+        backgroundColor: colors.secondary,
         width: "100%",
         padding: 15,
-        borderRadius: 10,
+        borderRadius: 20,
         marginTop: 20,
     },
     buttonText: {
-        color: "#fff",
+        color: colors.white,
         textAlign: "center",
-        fontSize: 16,
-        fontWeight: "bold",
+        fontSize: 20,
+        fontFamily: "Inter-600"
     },
 });
 

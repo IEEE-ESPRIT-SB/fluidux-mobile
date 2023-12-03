@@ -4,12 +4,12 @@ import SignUpForm from "../components/SignUpForm";
 import {useState} from "react";
 
 const Auth = ({navigation}) => {
-    const [path, setPath] = useState("Sign In");
+    const [path, setPath] = useState("SIGN IN");
 
     return (
         <AuthLayout path={path} navigation={navigation} setPath={setPath}>
             {
-                path === 'Sign In' ?
+                path === 'SIGN IN' ?
                     <SignInForm navigation={navigation}/>
                     :
                     <SignUpForm navigation={navigation}/>
