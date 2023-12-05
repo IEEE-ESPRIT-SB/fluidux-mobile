@@ -169,10 +169,6 @@ The `MainStack` uses the `createDrawerNavigator` from the `@react-navigation/dra
 
 A custom drawer content component (`CustomDrawerContent`) is implemented to provide a personalized and branded experience for users.
 
-### Installation
-
-The `MainStack` is integrated into the main application flow. Ensure that the necessary dependencies are installed, as specified in the [main README.md](../README.md).
-
 ### Usage
 
 The `MainStack` is automatically navigated to based on the app's configuration in `App.js`.
@@ -219,14 +215,6 @@ Access the "Home" screen through the drawer menu to get a quick overview of your
 
 - **Chart Component:** The `Chart` component is imported and used to display the consumption and energy creation trends.
 
-### Contributing
-
-If you would like to contribute to the `Home` functionality or have suggestions for improvements, please follow the [contribution guidelines](CONTRIBUTING.md).
-
-### License
-
-This component is part of the FluiDux project and is licensed under the [MIT License](LICENSE).
-
 ### Acknowledgments
 
 - Special thanks to [Acknowledged Person/Team] for their contributions or inspiration.
@@ -259,14 +247,6 @@ Access the "Profile" screen through the drawer menu to view and manage your prof
 
 - **React Native Components:** Utilized for building the user interface.
 - **Feather Icons:** Used for displaying menu icons.
-
-### Contributing
-
-If you would like to contribute to the `Profile` functionality or have suggestions for improvements, please follow the [contribution guidelines](CONTRIBUTING.md).
-
-### License
-
-This component is part of the FluiDux project and is licensed under the [MIT License](LICENSE).
 
 ### Acknowledgments
 
@@ -310,13 +290,6 @@ Access the "Notifications" screen through the drawer menu to stay informed about
 
 - **NotificationItem Component:** Reusable component for displaying individual notifications.
 
-### Contributing
-
-If you would like to contribute to the `Notifications` functionality, please follow the [contribution guidelines](CONTRIBUTING.md).
-
-### License
-
-This component is part of the FluiDux project and is licensed under the [MIT License](LICENSE).
 
 ### Acknowledgments
 
@@ -347,14 +320,6 @@ Access the "Add Valve" screen through the drawer menu to input valve information
 
 - **React Native Components:** Utilized for building the user interface.
 - **Feather Icons:** Used for displaying menu icons.
-
-### Contributing
-
-If you would like to contribute to the `AddValve` functionality or have suggestions for improvements, please follow the [contribution guidelines](CONTRIBUTING.md).
-
-### License
-
-This component is part of the FluiDux project and is licensed under the [MIT License](LICENSE).
 
 ### Acknowledgments
 
