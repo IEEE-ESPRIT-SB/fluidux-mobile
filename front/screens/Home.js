@@ -3,8 +3,40 @@ import colors from "../assets/colors.json";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
 import Chart from "../components/Chart";
+import axios from 'axios';
+import {base_url} from '../server.json';
+import React, { useState , useEffect} from "react";
+const Home =  ({ navigation }) => {
 
-const Home = ({ navigation }) => {
+  
+    const [predictionResponse, setPredictionResponse] = useState("");
+  
+    const getAIdata = async () => {
+      try {
+        const res = await axios.get(`${base_url}/api/predict/`);
+        const responseData = res.data;
+  
+        // Store the response data in state
+        setPredictionResponse(responseData);
+  
+        // Rest of your code
+      
+      } catch (error) {
+        console.log(error);
+        Alert.alert(
+          "error",
+          "Failed to sign in. Please check your email and password."
+        );
+      }
+    };
+  
+    // Call the function to get data when the component mounts
+    useEffect(() => {
+      getAIdata();
+    }, []);
+
+
+  
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -20,7 +52,8 @@ const Home = ({ navigation }) => {
       <View style={styles.content}>
         <View style={styles.cards}>
           <View style={styles.card}>
-            <Text style={styles.cardTitle}>Energy Created</Text>
+            <Text style={styles.cardTitle}>Consomption Of Water</Text>
+            
             <Text style={styles.cardSubtitle}>
               6%{" "}
               <Feather name="arrow-down-right" size={14} color={colors.white} />{" "}
@@ -46,7 +79,9 @@ const Home = ({ navigation }) => {
             </View>
           </View>
         </View>
-
+        <View style={styles.card}>
+        <Text style={styles.cardTitle}>{predictionResponse}{"  cl"}</Text>
+</View>
         <Chart />
       </View>
     </SafeAreaView>

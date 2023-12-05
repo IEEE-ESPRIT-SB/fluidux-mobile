@@ -2,7 +2,8 @@ from django.urls import path
 from . import views
 from .views import checkUserCredentials
 from .views import getUserValves
-# from .views import predict_view
+
+
 urlpatterns = [
     path('', views.home, name='home'),
     # Paths for User model
@@ -31,5 +32,5 @@ urlpatterns = [
      #checkifuserhasvalve
      path('//<int:user_id>/valves/', getUserValves, name='user_valves'),
      #AI
-#      path('predict/', predict_view, name='predict_view'),
+    path('predict/', views.predict_view, name='predict_view'),
 ]

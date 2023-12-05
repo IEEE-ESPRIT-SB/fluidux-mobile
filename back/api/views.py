@@ -8,10 +8,12 @@ from django.contrib.auth import authenticate
 from django.http import HttpResponse
 from rest_framework.response import Response
 from django.shortcuts import render
-import pickle
+import joblib
 import numpy as np  # Assuming you need this for creating the sample_data
-# from keras.models import load_model
-
+from datetime import datetime
+import pandas as pd
+from datetime import datetime, timedelta
+from tensorflow.keras.models import load_model
 
 from django.http import HttpResponse
 def home(request):
@@ -239,21 +241,40 @@ def getUserValves(request, user_id):
     except User.DoesNotExist:
         # User not found
         return HttpResponseNotFound({'message': 'User not found'}, content_type='application/json')
-# import os
-# @api_view(['GET'])
-# def predict_view(request):
-#     try:
-#         model = load_model('C:\\Users\\Souid\\Downloads\\new_sight\\new_sight\\sight\\api\\anomaly_model.h5')
-#
-#         if model is not None:
-#             # Assuming your model expects an input with two features
-#             sample_data = np.array([[1609788, 20]])  # Reshape to 2D array
-#             prediction = model.predict(sample_data)[0]
-#             return HttpResponse(f"Prediction: {prediction}")
-#         else:
-#             return HttpResponse("Model not loaded. Check if the file exists.", status=500)
-#     except FileNotFoundError:
-#         return HttpResponse("File Not Found")
-#     except Exception as e:
-#         return HttpResponse(f"Error: {str(e)}")
+
+@api_view(['GET'])
+def predict_view(request):
+    try:
+        model = load_model('C:\\Users\\Souid\\Documents\\IEEE\\FINALVERSION\\fluidux-mobile\\back\\api\\model\\model.h5')
+        scaler = joblib.load('C:\\Users\\Souid\\Documents\\IEEE\\FINALVERSION\\fluidux-mobile\\back\\api\\model\\scaler.joblib')
+        if model is not None:
+            current_time = datetime.now()
+            tomorrow_time = current_time + timedelta(days=1)
+
+            year = current_time.year
+            month = current_time.month
+            day = current_time.day
+            tomorrow_formatted = tomorrow_time.strftime('%d/%m/%Y')
+            years = [year for i in range(1440)]
+            months = [month for i in range(1440)]
+            days = [day for i in range(1440)]
+            hours = [i % 24 for i in range(1440)]
+            minutes = [i % 60 for i in range(1440)]
+            entry_ids = list(range(1440))
+
+            X = pd.DataFrame({"entry_id" :entry_ids , "years" : years, "months" : months , "days" : days , "hours": hours , "minutes" : minutes})
+
+            X_scaled = scaler.fit_transform(X)
+            X_reshapedd = X_scaled.reshape(X_scaled.shape[0], 1, X_scaled.shape[1])
+            preds = model.predict(X_reshapedd)
+            preds = [i[0] for i in preds.tolist()]
+
+            return HttpResponse(f"Your Water Consumption Predection For {tomorrow_formatted} is : {sum(preds)}")
+        else:
+            return HttpResponse("Model not loaded. Check if the file exists.", status=500)
+    
+    except FileNotFoundError:
+        return HttpResponse("File Not Found")
+    except Exception as e:
+        return HttpResponse(f"Error: {str(e)}") 
 

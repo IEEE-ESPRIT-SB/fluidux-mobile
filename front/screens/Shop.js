@@ -3,25 +3,16 @@ import {Image, ScrollView, StyleSheet, Text, TouchableOpacity, View} from "react
 import colors from "../assets/colors.json";
 import {SafeAreaView} from "react-native-safe-area-context";
 import {AntDesign, Feather, Ionicons} from "@expo/vector-icons";
-import productImage from "../assets/images/Product.jpg";
+import productImage from "../assets/images/Products.jpg";
 const productsData = [
-    {id: 1, name: "Product 1", price: "10", image: require("../assets/product.png"), description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc sodales aliquam."},
-    {id: 2, name: "Product 2", price: "20", image: require("../assets/product.png"), description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc sodales aliquam."},
-    {id: 3, name: "Product 3", price: "15", image: require("../assets/product.png"), description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc sodales aliquam."},
-    {id: 4, name: "Product 4", price: "12", image: require("../assets/product.png"), description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc sodales aliquam."},
-    {id: 4, name: "Product 4", price: "12", image: require("../assets/product.png"), description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc sodales aliquam."},
-    {id: 4, name: "Product 4", price: "12", image: require("../assets/product.png"), description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc sodales aliquam."},
-    {id: 4, name: "Product 4", price: "12", image: require("../assets/product.png"), description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc sodales aliquam."},
-    {id: 4, name: "Product 4", price: "12", image: require("../assets/product.png"), description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc sodales aliquam."},
-    {id: 4, name: "Product 4", price: "12", image: require("../assets/product.png"), description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc sodales aliquam."},
-    {id: 4, name: "Product 4", price: "12", image: require("../assets/product.png"), description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc sodales aliquam."},
-    {id: 4, name: "Product 4", price: "12", image: require("../assets/product.png"), description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc sodales aliquam."},
-    {id: 4, name: "Product 4", price: "12", image: require("../assets/product.png"), description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc sodales aliquam."},
-    {id: 4, name: "Product 4", price: "12", image: require("../assets/product.png"), description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc sodales aliquam."},
-    {id: 4, name: "Product 4", price: "12", image: require("../assets/product.png"), description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc sodales aliquam."},
-    {id: 4, name: "Product 4", price: "12", image: require("../assets/product.png"), description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc sodales aliquam."},
-    {id: 4, name: "Product 4", price: "12", image: require("../assets/product.png"), description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc sodales aliquam."},
-    {id: 4, name: "Product 4", price: "12", image: require("../assets/product.png"), description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc sodales aliquam."},
+    {id: 1, name: "Product 1", price: "10", image: require("../assets/1.jpg"), description: "Bouteilles d'eau réutilisables : Ce sont des bouteilles que tu peux remplir avec de l'eau et réutiliser encore et encore."},
+    {id: 2, name: "Product 2", price: "20", image: require("../assets/2.jpg"), description: " Sacs réutilisables : Ce sont des sacs en tissu ou en toile que tu peux utiliser pour faire tes courses."},
+    {id: 3, name: "Product 3", price: "15", image: require("../assets/3.jpg"), description: "Produits de nettoyage écologiques : Ce sont des produits de nettoyage qui sont fabriqués à partir d'ingrédients naturels et respectueux de l'environnement."},
+    {id: 4, name: "Product 4", price: "12", image: require("../assets/4.jpg"), description: "Produits de beauté naturels : Ce sont des produits de beauté fabriqués à partir d'ingrédients naturels, comme des huiles essentielles et des extraits de plantes."},
+    {id: 5, name: "Product 5", price: "12", image: require("../assets/5.jpg"), description: "Ampoules LED : Ce sont des ampoules qui utilisent la technologie LED, ce qui les rend plus écoénergétiques."},
+    {id: 6, name: "Product 6", price: "12", image: require("../assets/6.jpg"), description: "Produits alimentaires biologiques : Ce sont des aliments qui sont cultivés sans l'utilisation de pesticides ou d'engrais chimiques."},
+    {id: 7, name: "Product 7", price: "12", image: require("../assets/7.jpg"), description: "Vêtements durables : Ce sont des vêtements fabriqués à partir de matériaux durables, comme le coton biologique ou le lin. "},
+    {id: 8, name: "Product 8", price: "12", image: require("../assets/8.jpg"), description: "Vélos électriques : Les velos électriques sont des moyens de transport écologiques et durables."},
 ];
 
 const Product = ({ name, price, image, description }) => {

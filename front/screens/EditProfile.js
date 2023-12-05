@@ -4,10 +4,10 @@ import colors from "../assets/colors.json";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const EditProfile = () => {
-    const [name, setName] = useState("John Doe");
-    const [location, setLocation] = useState("City, Country");
+    const [name, setName] = useState("kamrl jmal");
+    const [location, setLocation] = useState("Ariana,Tunisie");
     const [phoneNumber, setPhoneNumber] = useState("+1234567890");
-    const [email, setEmail] = useState("johndoe@example.com");
+    const [email, setEmail] = useState("kamel@gmail.com");
 
     const handleSave = () => {
         // Ajoutez ici la logique pour enregistrer les modifications du profil

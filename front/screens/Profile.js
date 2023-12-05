@@ -6,10 +6,10 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 const Profile = ({ navigation }) => {
   const userProfile = {
-    name: "John Doe",
-    location: "City, Country",
+    name: "kamel jmal",
+    location: "Ariana,Tunisie",
     phoneNumber: "+1234567890",
-    email: "johndoe@example.com",
+    email: "kamel@gmail.com",
     // ... autres informations sur le profil de l'utilisateur ...
   };
 

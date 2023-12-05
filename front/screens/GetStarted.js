@@ -21,10 +21,8 @@ const GetStarted = ({navigation}) => {
                         <Text style={styles.subtitle}>Welcome to </Text>
                         <Text style={styles.title}>FLUIDUX Mobile APP</Text>
                     </View>
-                    <Text style={styles.description}>Lorem ipsum dolor sit amet consectetur. Pretium nulla convallis
-                        habitasse ornare magna. Neque massa auctor urna dis dolor accumsan elementum leo vel. Et libero
-                        nec vitae egestas dolor imperdiet duis condimentum. Porttitor et vitae nibh blandit volutpat vel
-                        tempor ipsum massa. </Text>
+                    <Text style={styles.description}>High water and electricity bills ? No worries ! 
+FluiDux is an application that allows you to monitor your consumption while calculating the flow rate of your valve and generate some energy ! </Text>
                 </View>
                 <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Auth")}>
                     <Text style={styles.buttonText}>Get Started</Text>
